@@ -1,8 +1,8 @@
-# Canadian BI Job Market Analyzer 🍁
+# Canadian BI Job Market Analyzer 
 
 An interactive, data-driven Business Intelligence dashboard built with Python and Streamlit. This application helps newcomers, international students, and recent graduates navigate the entry-level Data Science and Business Intelligence job market in Canada by synthesizing real-time job postings with socio-economic city data.
 
-## 🌟 Features
+##  Features
 - **Live Job Listings Explorer:** Filter and browse real-world job roles across major Canadian tech hubs (Toronto, Vancouver, Montreal, Calgary, Ottawa).
 - **Map & City Analysis:** Interactive geographic bubble maps and heatmaps showing job volumes and industry distribution.
 - **Skills Demand Analytics:** Horizontal bar charts outlining exactly which technical tools (SQL, Python, Power BI, etc.) yield the highest ROI for job seekers.
@@ -11,7 +11,7 @@ An interactive, data-driven Business Intelligence dashboard built with Python an
 
 ---
 
-## 🛠️ Project Architecture
+##  Project Architecture
 The project operates via three decoupled layers:
 1. **Extraction:** Python `.requests` fetching nested JSON arrays from the JSearch RapidAPI. 
 2. **Processing (ETL):** Pandas logic (`clean_and_enrich_data.py`) parsing Regex Word Boundaries, normalizing strings, interpolating salaries, and merging CSVs files.
@@ -19,7 +19,7 @@ The project operates via three decoupled layers:
 
 ---
 
-## 💻 Installation & Setup
+##  Installation & Setup
 
 You need Python installed on your machine to run this project. 
 
@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 How to Run the Application
+##  How to Run the Application
 
 Once your virtual environment is active and dependencies are installed, start the Streamlit server natively:
 
@@ -70,7 +70,7 @@ If you have a valid JSearch RapidAPI key, you can pull a fresh batch of data by 
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```text
 CST2213_Project/
 │
