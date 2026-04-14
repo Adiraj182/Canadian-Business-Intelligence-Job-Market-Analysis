@@ -3,19 +3,19 @@
 An interactive, data-driven Business Intelligence dashboard built with Python and Streamlit. This application helps newcomers, international students, and recent graduates navigate the entry-level Data Science and Business Intelligence job market in Canada by synthesizing real-time job postings with socio-economic city data.
 
 ##  Features
-- **Live Job Listings Explorer:** Filter and browse real-world job roles across major Canadian tech hubs (Toronto, Vancouver, Montreal, Calgary, Ottawa).
-- **Map & City Analysis:** Interactive geographic bubble maps and heatmaps showing job volumes and industry distribution.
-- **Skills Demand Analytics:** Horizontal bar charts outlining exactly which technical tools (SQL, Python, Power BI, etc.) yield the highest ROI for job seekers.
+- **Live Job Listings Explorer:** Filter and browse real-world job roles across major Canadian tech hubs with dynamic routing to direct application source pages.
+- **Skills Demand Analytics & Market Clustering:** Interactive Unsupervised Machine Learning (K-Means & PCA) automatically groups the market into distinct "skill profiles".
 - **Opportunity Scorecap:** A custom KPI ranking cities holistically by weighing job availability against local median income and cost of living.
-- **Newcomer Recommendations Engine:** Input your current skills and target role to dynamically calculate your "Skills Gap" and predict your median salary.
+- **AI Classification Engine:** Input your current skills and let a cross-validated Random Forest Classifier (Supervised ML) predict your optimal career path and output a dynamic confidence probability matrix.
 
 ---
 
 ##  Project Architecture
 The project operates via three decoupled layers:
-1. **Extraction:** Python `.requests` fetching nested JSON arrays from the JSearch RapidAPI. 
-2. **Processing (ETL):** Pandas logic (`clean_and_enrich_data.py`) parsing Regex Word Boundaries, normalizing strings, interpolating salaries, and merging CSVs files.
-3. **Presentation:** Streamlit GUI (`app.py`) visualizing the flattened datasets using Plotly charts.
+1. **Extraction:** Python `.requests` fetching nested JSON arrays and extracting proprietary application links from the JSearch RapidAPI.
+2. **Processing (ETL):** Pandas logic (`clean_and_enrich_data.py`) parsing regex, normalizing strings, clustering skills, and merging datasets.
+3. **Machine Learning:** `scikit-learn` algorithms powering Unsupervised Job Clustering and Supervised Role Classification natively.
+4. **Presentation:** Streamlit GUI (`app.py`) visualizing the data through fully interactive Plotly maps, PCA matrices, and validation evaluation metrics.
 
 ---
 
@@ -49,7 +49,7 @@ Make sure your virtual environment is activated, then install the required libra
 ```bash
 pip install -r requirements.txt
 ```
-*(If you do not have a requirements file, run: `pip install streamlit pandas plotly wordcloud matplotlib requests numpy`)*
+*(If you do not have a requirements file, run: `pip install streamlit pandas plotly wordcloud matplotlib requests numpy scikit-learn`)*
 
 ---
 

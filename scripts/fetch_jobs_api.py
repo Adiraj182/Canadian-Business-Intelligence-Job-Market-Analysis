@@ -66,6 +66,7 @@ for city in cities:
                         "job_type"       : job.get("job_employment_type"),
                         "remote_status"  : "Remote" if job.get("job_is_remote") else "On-site",
                         "pub_date"       : job.get("job_posted_at_datetime_utc"),
+                        "job_apply_link" : job.get("job_apply_link", ""),
                         "scraped_on"     : datetime.now().isoformat(),
                         "job_description": job.get("job_description") # Crucial for Phase 2 skills extraction
                     }

@@ -119,6 +119,7 @@ if 'remote_status' in jobs_df.columns:
         val = val.lower()
         if 'remote' in val or 'work from home' in val: return "Remote"
         if 'hybrid' in val: return "Hybrid"
+        
         return "On-site"
     jobs_df['Standardized_Remote'] = jobs_df['remote_status'].apply(clean_remote)
 
@@ -128,7 +129,7 @@ cols_to_keep = ['job_id', 'title', 'Standardized_Title', 'company', 'Normalized_
 if 'province' in jobs_df.columns: cols_to_keep.append('province')
 
 curr_cols = jobs_df.columns.tolist()
-for c in ['Clean_Salary_Min', 'Clean_Salary_Max', 'Clean_Salary_Mid', 'Standardized_Remote', 'job_type', 'pub_date', 'job_description']:
+for c in ['Clean_Salary_Min', 'Clean_Salary_Max', 'Clean_Salary_Mid', 'Standardized_Remote', 'job_type', 'pub_date', 'job_description', 'job_apply_link']:
     if c in curr_cols: cols_to_keep.append(c)
 
 skill_cols = [c for c in curr_cols if c.startswith('Skill_')]
